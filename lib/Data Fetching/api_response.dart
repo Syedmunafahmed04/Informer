@@ -10,18 +10,18 @@ class api_response {
  
   Future<top_headlines_model> get_top_head_response(String channel) async {
     try {
-      String Munaf_Api =
-          'https://newsapi.org/v2/top-headlines?sources=$channel&apiKey=0c900ad00c9a47348c3a6b67c3436eda';
 
-      String Laiba_Api =
-          'https://newsapi.org/v2/top-headlines?sources=$channel&apiKey=19e0e92cb8ad4dd99d4bdd728f4b40ec';
 
-      String Naveel_Api =
-          "https://newsapi.org/v2/top-headlines?sources=$channel&apiKey=11070884658c451da1c1d09dd2c0cb67";
+        //GET YOUR API KEY AND ADD INTO YOUR URL
 
-      final response = await http.get(Uri.parse(Naveel_Api));
 
-      if (response.statusCode == 200) {
+      final response = await http.get(Uri.parse(
+
+        // ADD URL WITH API KEY
+
+      ));
+
+     if (response.statusCode == 200) {
         var decoded_data = jsonDecode(response.body);
 
         return top_headlines_model.fromJson(decoded_data);
@@ -37,17 +37,14 @@ class api_response {
 
   Future<general_news_model> get_general_news(var country) async {
     try {
-// MUNAF API
-      String Munaf_Api =
-          'https://newsapi.org/v2/everything?q=$country&apiKey=0c900ad00c9a47348c3a6b67c3436eda';
-// LAIBA API
-      String Laiba_Api =
-          'https://newsapi.org/v2/everything?q=$country&apiKey=19e0e92cb8ad4dd99d4bdd728f4b40ec';
-// NAVEEL API
-      String Naveel_Api =
-          "https://newsapi.org/v2/everything?q=$country&apiKey=11070884658c451da1c1d09dd2c0cb67";
 
-      final response = await http.get(Uri.parse(Naveel_Api));
+//GET YOUR API KEY AND ADD INTO YOUR URL
+
+      final response = await http.get(Uri.parse(
+
+// ADD URL WITH API KEY
+
+      ));
       var decode_general_news_data = jsonDecode(response.body);
 
       return general_news_model.fromJson(decode_general_news_data);
@@ -62,17 +59,15 @@ class api_response {
 
   Future<categories_model> get_categories(String category) async {
     try {
-// MUNAF API
-      String Munaf_Api =
-          'https://newsapi.org/v2/everything?q=${category.toLowerCase()}&apiKey=0c900ad00c9a47348c3a6b67c3436eda';
-// LAIBA API
-      String Laiba_Api =
-          'https://newsapi.org/v2/everything?q=${category.toLowerCase()}&apiKey=19e0e92cb8ad4dd99d4bdd728f4b40ec';
-// NAVEEL API
-      String Naveel_Api =
-          "https://newsapi.org/v2/everything?q=${category.toLowerCase()}&apiKey=11070884658c451da1c1d09dd2c0cb67";
 
-      final response = await http.get(Uri.parse(Naveel_Api));
+
+//GET YOUR API KEY AND ADD INTO YOUR URL
+      final response = await http.get(Uri.parse(
+        
+        //ADD URL WITH API KEY
+
+
+      ));
 
       var decode_category_data = jsonDecode(response.body);
 
@@ -94,7 +89,7 @@ class api_response {
 
       if (permission == LocationPermission.denied) {
         permission = await Geolocator.requestPermission();
-//If Denied Again, Return Karachi by Default
+//If Denied Again, Return PAKISTAN by Default
         if (permission == LocationPermission.denied) {
           return 'Pakistan';
         }

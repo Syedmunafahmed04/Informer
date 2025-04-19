@@ -16,9 +16,6 @@ final card_news_source_style = GoogleFonts.poppins(
   fontSize: 7,
 );
 
-// final card_news_date_style = GoogleFonts.openSans(
-//   color: Colors.black,
-// );
 
 const card_news_date_style = TextStyle(fontSize: 10, color: Colors.black);
 

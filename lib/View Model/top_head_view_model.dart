@@ -13,11 +13,7 @@ class News_View_Model {
     return response;
   }
 
-  // Future<general_news_model> get_general_news(var location) async {
-  //   final general_news_response =
-  //       await _get_api_response.get_general_news(location);
-  //   return general_news_response;
-  // }
+ 
 
   Future<categories_model> get_categories(String category_name) async {
     final category_response =
